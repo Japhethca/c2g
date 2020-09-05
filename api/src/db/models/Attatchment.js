@@ -23,5 +23,18 @@ module.exports = (sequelize, DataTypes) => {
     updatedAt: DataTypes.DATE,
   });
 
+  Attatchment.associate = (models) => {
+    models.User.hasMany(
+      models.Attatchment,
+      {
+        as: "applicant",
+        foreignKey: "applicantId",
+      },
+      {
+        onDelete: "CASCADE",
+      }
+    );
+  };
+
   return Attatchment;
 };

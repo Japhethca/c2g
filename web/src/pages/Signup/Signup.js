@@ -3,6 +3,8 @@ import { useHistory } from "react-router-dom";
 import { Formik } from "formik";
 import axios from "axios";
 
+import styles from "./Signup.module.css";
+
 export default function Signup(props) {
   const history = useHistory();
   const handleSignup = (values, { setSubmitting }) => {

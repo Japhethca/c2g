@@ -2,6 +2,8 @@ import React, { useState } from "react";
 import { Formik } from "formik";
 import axios from "axios";
 
+import styles from "./NewApplication.module.css";
+
 const NewApplication = (props) => {
   const submitApplication = (values, { setSubmitting }) => {
     const status = "PENDING";
