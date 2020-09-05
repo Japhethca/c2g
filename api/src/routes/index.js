@@ -7,7 +7,7 @@ const validate = require("./routeValidator");
 const authHandlers = require("./handlers/auth");
 const applicationHandlers = require("./handlers/licence-application");
 
-const joiDate = joi.extend(JoiDate);
+const uploadFile = require("./handlers/fileupload");
 
 const root = express.Router();
 
@@ -72,4 +72,5 @@ applicationRoutes.put("/:id/status", applicationHandlers.updateStatus);
 
 root.use("/applications", applicationRoutes);
 
+root.post("/upload", authMiddleware, uploadFile);
 module.exports = root;
